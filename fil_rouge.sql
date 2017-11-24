@@ -1,8 +1,6 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-test
-
 DROP DATABASE IF EXISTS fil_rouge;
 CREATE DATABASE fil_rouge CHARACTER SET 'utf8';
 USE fil_rouge;
@@ -21,7 +19,7 @@ CREATE TABLE article(
         id_taxe                 Int NOT NULL ,
         PRIMARY KEY (ref_article )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: client
@@ -35,7 +33,7 @@ CREATE TABLE client(
         id_ville       Int ,
         PRIMARY KEY (id_client )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: ville
@@ -47,7 +45,7 @@ CREATE TABLE ville(
         code_postal_ville Varchar (55) ,
         PRIMARY KEY (id_ville )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: commande
@@ -62,7 +60,7 @@ CREATE TABLE commande(
         id_statut           Int NOT NULL ,
         PRIMARY KEY (id_commande )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: ligne_cmd
@@ -77,7 +75,7 @@ CREATE TABLE ligne_cmd(
         id_commande        Int NOT NULL ,
         PRIMARY KEY (id_sous_cmd )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: taxes
@@ -89,7 +87,7 @@ CREATE TABLE taxes(
         taux_taxe Decimal (25,2) ,
         PRIMARY KEY (id_taxe )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: statut
@@ -100,7 +98,7 @@ CREATE TABLE statut(
         libelle_statut Varchar (50) ,
         PRIMARY KEY (id_statut )
 )ENGINE=InnoDB;
-
+DEFAULT CHARSET=utf8
 
 #------------------------------------------------------------
 # Table: correspondre
@@ -111,6 +109,7 @@ CREATE TABLE correspondre(
         ref_article Int NOT NULL ,
         PRIMARY KEY (id_sous_cmd ,ref_article )
 )ENGINE=InnoDB;
+DEFAULT CHARSET=utf8
 
 ALTER TABLE article ADD CONSTRAINT FK_article_id_taxe FOREIGN KEY (id_taxe) REFERENCES taxes(id_taxe);
 ALTER TABLE client ADD CONSTRAINT FK_client_id_ville FOREIGN KEY (id_ville) REFERENCES ville(id_ville);
