@@ -18,7 +18,7 @@ CREATE TABLE article(
         prix_article            Decimal (25,2) ,
         id_taxe                 Int NOT NULL ,
         PRIMARY KEY (ref_article )
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #------------------------------------------------------------
@@ -43,7 +43,7 @@ CREATE TABLE ville(
         nom_ville         Varchar (255) ,
         code_postal_ville Varchar (55) ,
         PRIMARY KEY (id_ville )
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #------------------------------------------------------------
