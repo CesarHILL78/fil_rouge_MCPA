@@ -55,7 +55,7 @@ CREATE TABLE commande(
         id_commande         int (11) Auto_increment  NOT NULL ,
         date_commande       Date ,
         frais_port_commande Decimal (25,2) ,
-        delai_max_commande  Varchar (255) ,
+        delai_max_commande  Date ,
         id_client           Int NOT NULL ,
         id_statut           Int NOT NULL ,
         PRIMARY KEY (id_commande )
