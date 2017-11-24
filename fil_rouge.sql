@@ -1,7 +1,9 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-
+DROP DATABASE IF EXISTS fil_rouge;
+CREATE DATABASE fil_rouge CHARACTER SET 'utf8';
+USE fil_rouge;
 
 #------------------------------------------------------------
 # Table: article
